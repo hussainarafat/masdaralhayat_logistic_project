@@ -27,17 +27,13 @@ function RouteTooltip({ routeData, segmentDetails, position }) {
       className="p-2 text-xs bg-white border border-gray-400 rounded-md shadow-lg w-52" // Light tooltip style
       style={style}
     >
-      <strong className="block text-[11px] mb-1 border-b border-gray-200 pb-1 font-semibold text-gray-800">Route #{routeData.routeNumber} Details</strong>
       {/* Display the consistent set of fields for all routes */}
       <div className="space-y-0.5 text-[10px] text-gray-700">
         <p><strong>Dep:</strong> {routeData.departureTime || '--'}</p>
         <p><strong>Arr:</strong> {routeData.arrivalTime || '--'}</p>
         {/* Show Distance/Duration for the main From->To segment */}
-        <p><strong>Distance:</strong> {mainDetails?.distance || (mainDetails?.errorStatus ? getDirectionsErrorText(mainDetails.errorStatus) : '...')}</p>
-        <p><strong>Duration:</strong> {mainDetails?.duration || '...'}</p>
         <p><strong>Vehicle:</strong> {routeData.vehicleType || '--'}</p>
         <p><strong>Owner:</strong> {routeData.owner || '--'}</p>
-        <p><strong>Flights:</strong> {routeData.flights || '--'}</p>
       </div>
       {/* --- The entire Leg 2 section has been removed --- */}
     </div>
